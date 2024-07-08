@@ -1,5 +1,6 @@
 package family_tree.family_tree;
 
+import family_tree.human.Gender;
 import family_tree.human.Human;
 
 import java.util.ArrayList;
@@ -21,15 +22,28 @@ public class FamilyTree {
     public void setParents(Human child, Human father, Human mother) {
         child.setFather(father);
         child.setMother(mother);
-        father.getChildren().add(child);
-        mother.getChildren().add(child);
+        father.addChild(child);
+        mother.addChild(child);
+//        mother.getChildren().add(child);
+
+
+
     }
 
     public List<Human> getChildrenOfPerson(Human person) {
         List<Human> children = new ArrayList<>();
         for (Human child : person.getChildren()) {
             children.add(child);
+
         }
         return children;
     }
+
+//    public void  allChildren (Human persons,Human child){
+//        persons.addChild(child);
+//        persons.addChild(child);
+//    }
+
+
+
 }

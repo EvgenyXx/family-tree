@@ -22,6 +22,15 @@ public class Human {
         this.children = new ArrayList<>();
     }
 
+    public Human(String name, Gender gender, LocalDate birthDate) {
+        this.name = name;
+        this.gender = gender;
+        this.birthDate = birthDate;
+        this.children = new ArrayList<>();
+    }
+
+
+
     public String getName() {
         return name;
     }
@@ -79,5 +88,9 @@ public class Human {
     }
 
     public void setMother(Human mother) {
+    }
+
+    public void addChild(Human child) {
+        children.add(child);
     }
 }

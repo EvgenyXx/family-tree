@@ -14,15 +14,20 @@ public class Main {
         Human child1 = new Human("Кирилл", LocalDate.of(2000, 3, 10), null, null, Gender.MALE);
         Human child2 = new Human("Виктория", LocalDate.of(2005, 7, 25), null, null, Gender.FEMALE);
 
+
+
         FamilyTree familyTree = new FamilyTree();
 
         familyTree.addPerson(father1);
         familyTree.addPerson(mother1);
-        familyTree.addPerson(child1);
-        familyTree.addPerson(child2);
+
 
         familyTree.setParents(child1, father1, mother1);
         familyTree.setParents(child2, father1, mother1);
+
+
+
+//
 
         List<Human> children = familyTree.getChildrenOfPerson(father1);
         System.out.println("Отец " + father1.getName() + ":");
@@ -34,9 +39,8 @@ public class Main {
         System.out.println("Мама " + mother1.getName() + ":");
         System.out.println("Дети ");
         for (Human child : children){
-            System.out.println(child.getName());
+            System.out.println(child.getName() + " " + child.getBirthDate());
         }
-
 
 
     }
